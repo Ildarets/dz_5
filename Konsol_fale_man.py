@@ -4,6 +4,7 @@ import shutil
 from os import listdir
 from os.path import isfile, join
 from famouse_person import get_random_person
+from functions_consol_manager import mdir_func, rmdir_func, copy_func
 from my_bank import my_bank_account
 
 while True:
@@ -23,23 +24,16 @@ while True:
     choice = input('Выберите пункт меню: ')
     if choice == '1':
         name_folder = input("Введите название папки: ")
-        os.mkdir(name_folder)
+        mdir_func(name_folder)
 
     elif choice == '2':
         remove_folder = input("Введите название удаляемой файла/папки: ")
-        if os.path.isdir(remove_folder): # удалит только если это папка(вместе с содержимым)
-            shutil.rmtree(remove_folder)
-        elif os.path.isfile(remove_folder): # удалит только если это файл
-            os.unlink(remove_folder)
+        rmdir_func(remove_folder)
 
     elif choice == '3':
-        path = os.getcwd()
         folder_name = input("Введите имя копируемой папки: ")
         copy_folder_name = input("Введите название новой папки: ")
-        if os.path.isdir(folder_name): # копирует только если это папка(вместе с содержимым)
-            shutil.copytree(join(path, folder_name), join(path, copy_folder_name))
-        else:
-            shutil.copy(folder_name, copy_folder_name)
+        copy_func(folder_name, copy_folder_name)
 
     elif choice == '4':
         path = input("Ведите путь для проверки содержимого директории (если текущей, то введите ""this"": ")

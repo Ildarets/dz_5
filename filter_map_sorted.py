@@ -1,3 +1,6 @@
+import math
+
+
 def f_filter(x):
     """
     Фильтрует по первой букве в имени
@@ -13,11 +16,10 @@ def f_filter(x):
 def f_map(x):
     return x.upper()
 
-# def f_sorted(x):
-#     if x.startswith('m'):
-#         return True
-#     else:
-#         return False
+
+def f_sorted(x):
+    # return x[-2]
+    return lambda x: x[-2]
 
 
 if __name__ == '__main__':
@@ -28,4 +30,5 @@ if __name__ == '__main__':
     result = list(filter(f_filter, friends))
     print(result)
 
-    print(sorted(friends, key = lambda x:x[-2]))
+    print(sorted(friends, key=lambda x: x[-2]))
+    print(math.pi)
