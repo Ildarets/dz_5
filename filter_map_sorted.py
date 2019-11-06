@@ -13,6 +13,12 @@ def f_filter(x):
 def f_map(x):
     return x.upper()
 
+# def f_sorted(x):
+#     if x.startswith('m'):
+#         return True
+#     else:
+#         return False
+
 
 if __name__ == '__main__':
     friends = ['max', 'kate', 'man', 'leo']
@@ -21,3 +27,5 @@ if __name__ == '__main__':
 
     result = list(filter(f_filter, friends))
     print(result)
+
+    print(sorted(friends, key = lambda x:x[-2]))

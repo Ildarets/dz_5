@@ -14,3 +14,6 @@ def test_f_map():
     assert list(map(f_map, friends)) == ['MAX', 'KATE', 'MAN', 'LEO']
 
 
+def test_f_sorted():
+    friends = ['max', 'kate', 'man', 'leo']
+    assert sorted(friends, key = lambda x:x[-2]) == ['max', 'man', 'leo', 'kate']
