@@ -22,3 +22,5 @@ def test_copy():
     os.mkdir(name)
     copy_func(name, name_copy)
     assert os.path.exists(name_copy) == True
+    os.rmdir(name)
+    os.rmdir(name_copy)
