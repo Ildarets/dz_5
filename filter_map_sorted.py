@@ -18,7 +18,6 @@ def f_map(x):
 
 
 def f_sorted(x):
-    # return x[-2]
     return lambda x: x[-2]
 
 

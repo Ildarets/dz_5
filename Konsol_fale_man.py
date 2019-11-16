@@ -19,7 +19,8 @@ while True:
     print('9. играть в викторину')
     print('10. мой банковский счет')
     print('11. смена рабочей директории')
-    print('12. выход')
+    print('12. сохранить содержимое рабочей директории в файл')
+    print('13. выход')
 
     choice = input('Выберите пункт меню: ')
     if choice == '1':
@@ -69,6 +70,21 @@ while True:
         os.chdir(path)
 
     elif choice == '12':
+        path = os.getcwd()
+        onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
+        d = '.'
+        folders = list(filter(lambda x: os.path.isdir(os.path.join(d, x)), os.listdir(d)))
+        with open('listdir.txt', 'w') as f:
+            f.write('files: ')
+            for i in onlyfiles:
+                f.writelines(i + '  ')
+            f.write('\n')
+            f.write('dirs: ')
+            for i in folders:
+                f.writelines(i + '  ')
+
+
+    elif choice == '13':
         break
 
     else:
