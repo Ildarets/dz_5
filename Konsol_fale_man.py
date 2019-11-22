@@ -1,12 +1,10 @@
 import os
 import sys
-import shutil
 from os import listdir
 from os.path import isfile, join
 from famouse_person import get_random_person
 from functions_consol_manager import mdir_func, rmdir_func, copy_func, creator
 from my_bank import my_bank_account
-from decorator import add_separators
 
 
 while True:

@@ -27,16 +27,3 @@ def add_sep2(f):
 @add_sep2
 def my_bill(list):
     print(*list)
-
-if __name__ == '__main__':
-    # hello()
-
-    # result = other()
-    # print(result)
-
-    new_list_dir = add_separators(os.listdir)
-
-    print(new_list_dir())
-
-    result = my_sum(2, 4)
-    print(result)
