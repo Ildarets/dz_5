@@ -1,7 +1,9 @@
 import json
 import os
+from decorator import add_separators, my_bill, add_sep2
 
 
+@add_separators
 def my_bank_account():
     bill_list = []
     spending = {}
@@ -54,7 +56,7 @@ def my_bank_account():
             continue
 
         elif choice == '4':
-            print(*bill_list)
+            my_bill(bill_list)
             continue
 
         elif choice == '5':

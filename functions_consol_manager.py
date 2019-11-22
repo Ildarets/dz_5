@@ -5,6 +5,7 @@ from os import listdir
 from os.path import isfile, join
 from famouse_person import get_random_person
 from my_bank import my_bank_account
+from decorator import add_separators
 
 
 def mdir_func(name_folder):
@@ -24,3 +25,7 @@ def copy_func(folder_name, copy_folder_name):
         shutil.copytree(join(path, folder_name), join(path, copy_folder_name))
     else:
         shutil.copy(folder_name, copy_folder_name)
+
+@add_separators
+def creator():
+    print( "Создатель программы: Ильдар Шайдуллин")

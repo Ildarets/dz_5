@@ -1,5 +1,7 @@
 import random
+from decorator import add_separators
 
+@add_separators
 def get_random_person():
     FAMOUS_PEOPLE = {'Александр Сергеевич Пушкин': '26.06.1799', 'Михаил Юрьевич Лермонтов': '15.10.1814',
                  'Сергей Александрович Есенин': '03.10.1895', 'Владимир Семенович Высоцкий': '25.01.1938',

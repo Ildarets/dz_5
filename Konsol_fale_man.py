@@ -4,8 +4,10 @@ import shutil
 from os import listdir
 from os.path import isfile, join
 from famouse_person import get_random_person
-from functions_consol_manager import mdir_func, rmdir_func, copy_func
+from functions_consol_manager import mdir_func, rmdir_func, copy_func, creator
 from my_bank import my_bank_account
+from decorator import add_separators
+
 
 while True:
     print('1. создать папку')
@@ -70,7 +72,7 @@ while True:
         print(sys.platform)
 
     elif choice == '8':
-        print("Создатель программы: Ильдар Шайдуллин")
+        creator()
 
     elif choice == '9':
         get_random_person()
