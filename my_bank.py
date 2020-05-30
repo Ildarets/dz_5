@@ -1,8 +1,27 @@
+import json
+import os
+
+
 def my_bank_account():
     bill_list = []
     spending = {}
     bill_dig = 0
 
+    FILE_NAME = 'bill.json'
+    FILE_SPENDING = 'spending.json'
+    BILL = 'bill_dig.json'
+
+    if os.path.exists(FILE_NAME):
+        with open (FILE_NAME, 'r') as f:
+            bill_list = json.load(f)
+
+    if os.path.exists(FILE_SPENDING):
+        with open (FILE_SPENDING, 'r') as f:
+            spending = json.load(f)
+
+    if os.path.exists(BILL):
+        with open (BILL, 'r') as f:
+            bill_dig = json.load(f)
 
     while True:
         print('1. пополнение счета')
@@ -39,6 +58,16 @@ def my_bank_account():
             continue
 
         elif choice == '5':
+            with open(FILE_NAME, 'w') as f:
+                json.dump(bill_list,f)
+
+            with open(FILE_SPENDING, 'w') as f:
+                json.dump(spending, f)
+
+            # на случай если денег не хватает. Считает количесво денег в кошельке.
+            with open(BILL, 'w') as f:
+                json.dump(bill_dig, f)
+
             break
         else:
             print('Неверный пункт меню!')
